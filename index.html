@@ -5,24 +5,34 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <title>Bizhi Gao | Academic Homepage</title>
-    <meta name="description"
-          content="Academic homepage of Bizhi Gao, Shanghai University of Electric Power.">
+    <meta name="description" content="Academic homepage of Bizhi Gao, Shanghai University of Electric Power.">
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;1,6..72,400&display=swap" rel="stylesheet">
 
     <style>
         :root {
-            --navy: #24364b;
-            --blue: #3f6f9f;
-            --blue-light: #edf4fa;
-            --blue-mid: #dbe8f3;
-            --text: #2e3744;
-            --secondary: #687385;
-            --border: #e2e8f0;
-            --bg: #ffffff;
-            --soft: #f7f9fc;
+            --primary: #1e293b;
+            --primary-accent: #2563eb;
+            --primary-accent-light: #eff6ff;
+            --text-main: #334155;
+            --text-muted: #64748b;
+            --bg-body: #f8fafc;
+            --bg-card: #ffffff;
+            --border-color: #e2e8f0;
+            --shadow-sm: 0 1px 2px 0 rgb(0 0 0 / 0.05);
+            --shadow-md: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
+            --shadow-lg: 0 10px 25px -5px rgba(15, 23, 42, 0.08);
+            --radius-md: 10px;
+            --radius-lg: 16px;
         }
 
         * {
             box-sizing: border-box;
+            margin: 0;
+            padding: 0;
         }
 
         html {
@@ -30,18 +40,11 @@
         }
 
         body {
-            margin: 0;
-            font-family:
-                -apple-system,
-                BlinkMacSystemFont,
-                "Segoe UI",
-                Roboto,
-                Helvetica,
-                Arial,
-                sans-serif;
-            background: var(--bg);
-            color: var(--text);
-            line-height: 1.75;
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+            background-color: var(--bg-body);
+            color: var(--text-main);
+            line-height: 1.7;
+            -webkit-font-smoothing: antialiased;
         }
 
         a {
@@ -50,43 +53,45 @@
         }
 
         .container {
-            width: min(960px, calc(100% - 42px));
+            width: min(920px, calc(100% - 48px));
             margin: 0 auto;
         }
 
         /* Navigation */
         nav {
-            height: 70px;
+            height: 64px;
             display: flex;
             align-items: center;
-            border-bottom: 1px solid rgba(226, 232, 240, 0.8);
-            background: rgba(255, 255, 255, 0.92);
-            backdrop-filter: blur(10px);
+            border-bottom: 1px solid var(--border-color);
+            background: rgba(255, 255, 255, 0.85);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
             position: sticky;
             top: 0;
-            z-index: 10;
+            z-index: 50;
         }
 
         .nav-inner {
-            width: min(960px, calc(100% - 42px));
-            margin: auto;
             display: flex;
             justify-content: space-between;
             align-items: center;
+            width: 100%;
         }
 
-        .nav-name {
-            font-family: Georgia, "Times New Roman", serif;
+        .nav-brand {
+            font-family: 'Newsreader', serif;
             font-size: 1.25rem;
             font-weight: 600;
-            color: var(--navy);
+            color: var(--primary);
+            letter-spacing: -0.01em;
         }
 
         .nav-links {
             display: flex;
-            gap: 26px;
-            font-size: 0.93rem;
-            color: var(--secondary);
+            gap: 24px;
+            font-size: 0.9rem;
+            font-weight: 500;
+            color: var(--text-muted);
         }
 
         .nav-links a {
@@ -94,339 +99,331 @@
         }
 
         .nav-links a:hover {
-            color: var(--blue);
+            color: var(--primary-accent);
         }
 
-        /* Hero */
+        /* Hero Header */
         header {
-            position: relative;
-            overflow: hidden;
-            padding: 88px 0 72px;
-            background:
-                radial-gradient(circle at 90% 15%, #edf5fb 0, transparent 25%),
-                radial-gradient(circle at 10% 85%, #f2f6fa 0, transparent 25%),
-                #ffffff;
-            border-bottom: 1px solid var(--border);
+            padding: 64px 0 48px;
+            background: linear-gradient(180deg, #ffffff 0%, var(--bg-body) 100%);
+            border-bottom: 1px solid var(--border-color);
         }
 
         .hero {
-            display: flex;
+            display: grid;
+            grid-template-columns: 160px 1fr;
+            gap: 40px;
             align-items: center;
-            gap: 45px;
+        }
+
+        .avatar-container {
+            position: relative;
         }
 
         .avatar {
-            width: 142px;
-            height: 142px;
-            flex-shrink: 0;
+            width: 150px;
+            height: 150px;
             border-radius: 50%;
-            background: linear-gradient(145deg, #315f8b, #7297b9);
+            background: linear-gradient(135deg, #2563eb, #1e40af);
             display: flex;
             align-items: center;
             justify-content: center;
-            color: white;
-            font-family: Georgia, "Times New Roman", serif;
-            font-size: 2.9rem;
-            box-shadow:
-                0 14px 35px rgba(52, 84, 115, 0.18),
-                inset 0 0 0 6px rgba(255,255,255,0.15);
+            color: #ffffff;
+            font-family: 'Newsreader', serif;
+            font-size: 2.8rem;
+            font-weight: 500;
+            box-shadow: var(--shadow-lg);
+            border: 4px solid #ffffff;
         }
 
-        .hero-content {
-            flex: 1;
-        }
-
-        .eyebrow {
+        .status-badge {
             display: inline-flex;
             align-items: center;
-            gap: 7px;
-            padding: 5px 12px;
-            border-radius: 999px;
-            background: var(--blue-light);
-            color: var(--blue);
-            font-size: 0.8rem;
+            gap: 6px;
+            padding: 4px 10px;
+            background-color: var(--primary-accent-light);
+            color: var(--primary-accent);
+            border-radius: 20px;
+            font-size: 0.78rem;
             font-weight: 600;
-            letter-spacing: 0.04em;
-            text-transform: uppercase;
-            margin-bottom: 15px;
+            margin-bottom: 12px;
+            letter-spacing: 0.02em;
+        }
+
+        .status-dot {
+            width: 6px;
+            height: 6px;
+            border-radius: 50%;
+            background-color: var(--primary-accent);
         }
 
         h1 {
-            margin: 0;
-            font-family: Georgia, "Times New Roman", serif;
-            font-size: clamp(3rem, 7vw, 4.6rem);
-            line-height: 1.04;
+            font-family: 'Newsreader', serif;
+            font-size: clamp(2.4rem, 5vw, 3.2rem);
             font-weight: 500;
-            letter-spacing: -0.035em;
-            color: var(--navy);
+            color: var(--primary);
+            line-height: 1.1;
+            letter-spacing: -0.02em;
+            margin-bottom: 8px;
         }
 
         .role {
-            margin-top: 19px;
-            font-size: 1.08rem;
-            color: var(--secondary);
-        }
-
-        .info-line {
-            display: flex;
-            align-items: center;
-            gap: 10px;
-            margin-top: 8px;
-            color: var(--secondary);
-        }
-
-        .info-line svg {
-            width: 19px;
-            height: 19px;
-            stroke: var(--blue);
-            flex-shrink: 0;
+            font-size: 1.05rem;
+            color: var(--text-muted);
+            font-weight: 400;
+            margin-bottom: 6px;
         }
 
         .university {
-            color: var(--blue);
-            font-weight: 600;
+            font-size: 0.95rem;
+            color: var(--primary);
+            font-weight: 500;
+            display: flex;
+            align-items: center;
+            gap: 6px;
+        }
+
+        .university svg {
+            width: 16px;
+            height: 16px;
+            stroke: var(--primary-accent);
         }
 
         .hero-links {
             display: flex;
             flex-wrap: wrap;
-            gap: 12px;
-            margin-top: 25px;
+            gap: 10px;
+            margin-top: 20px;
         }
 
-        .hero-link {
+        .btn-link {
             display: inline-flex;
             align-items: center;
-            gap: 8px;
-            padding: 9px 15px;
-            border: 1px solid var(--border);
-            border-radius: 7px;
-            color: var(--navy);
-            background: white;
-            font-size: 0.91rem;
-            transition:
-                transform 0.2s ease,
-                border-color 0.2s ease,
-                box-shadow 0.2s ease;
+            gap: 6px;
+            padding: 8px 14px;
+            background: var(--bg-card);
+            border: 1px solid var(--border-color);
+            border-radius: var(--radius-md);
+            color: var(--primary);
+            font-size: 0.85rem;
+            font-weight: 500;
+            box-shadow: var(--shadow-sm);
+            transition: all 0.2s ease;
         }
 
-        .hero-link:hover {
-            transform: translateY(-2px);
-            border-color: #b7cbdd;
-            box-shadow: 0 7px 18px rgba(36, 54, 75, 0.08);
+        .btn-link:hover {
+            border-color: var(--primary-accent);
+            color: var(--primary-accent);
+            transform: translateY(-1px);
+            box-shadow: var(--shadow-md);
         }
 
-        .hero-link svg {
-            width: 18px;
-            height: 18px;
-            stroke: var(--blue);
+        .btn-link svg {
+            width: 16px;
+            height: 16px;
+            stroke: currentColor;
         }
 
-        /* Main */
+        /* Main Content Body */
         main {
-            padding: 65px 0 80px;
+            padding: 56px 0 80px;
         }
 
         section {
-            margin-bottom: 65px;
+            margin-bottom: 56px;
         }
 
-        .section-heading {
-            display: flex;
-            align-items: center;
-            gap: 12px;
-            margin-bottom: 23px;
-        }
-
-        .section-icon {
-            width: 42px;
-            height: 42px;
-            border-radius: 10px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            background: var(--blue-light);
-        }
-
-        .section-icon svg {
-            width: 21px;
-            height: 21px;
-            stroke: var(--blue);
-        }
-
-        h2 {
-            margin: 0;
-            font-family: Georgia, "Times New Roman", serif;
-            font-size: 1.75rem;
+        .section-title {
+            font-family: 'Newsreader', serif;
+            font-size: 1.6rem;
             font-weight: 500;
-            color: var(--navy);
+            color: var(--primary);
+            margin-bottom: 20px;
+            padding-bottom: 8px;
+            border-bottom: 1px solid var(--border-color);
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .section-title svg {
+            width: 22px;
+            height: 22px;
+            stroke: var(--primary-accent);
         }
 
         .about-text {
-            max-width: 840px;
-            font-size: 1.02rem;
-            color: #4d5868;
+            font-size: 1rem;
+            color: var(--text-main);
+            line-height: 1.8;
         }
 
-        /* Research */
+        .about-text strong {
+            color: var(--primary);
+            font-weight: 600;
+        }
+
+        /* Research Cards Grid */
         .research-grid {
             display: grid;
             grid-template-columns: repeat(2, minmax(0, 1fr));
-            gap: 18px;
+            gap: 16px;
         }
 
         .research-card {
-            position: relative;
-            padding: 25px;
-            border: 1px solid var(--border);
-            border-radius: 12px;
-            background: #fff;
-            transition:
-                transform 0.22s ease,
-                box-shadow 0.22s ease,
-                border-color 0.22s ease;
-            overflow: hidden;
-        }
-
-        .research-card::before {
-            content: "";
-            position: absolute;
-            width: 4px;
-            top: 0;
-            bottom: 0;
-            left: 0;
-            background: var(--blue);
-            opacity: 0;
-            transition: opacity 0.2s ease;
+            background: var(--bg-card);
+            padding: 22px;
+            border: 1px solid var(--border-color);
+            border-radius: var(--radius-lg);
+            box-shadow: var(--shadow-sm);
+            transition: all 0.25s ease;
         }
 
         .research-card:hover {
-            transform: translateY(-4px);
-            border-color: #ccdae7;
-            box-shadow: 0 12px 28px rgba(35, 54, 75, 0.09);
+            border-color: #cbd5e1;
+            transform: translateY(-3px);
+            box-shadow: var(--shadow-md);
         }
 
-        .research-card:hover::before {
-            opacity: 1;
-        }
-
-        .card-top {
+        .card-header {
             display: flex;
             align-items: center;
-            gap: 14px;
-            margin-bottom: 13px;
+            gap: 12px;
+            margin-bottom: 10px;
         }
 
-        .card-icon {
-            width: 46px;
-            height: 46px;
-            border-radius: 10px;
-            background: var(--blue-light);
+        .card-icon-wrapper {
+            width: 38px;
+            height: 38px;
+            border-radius: var(--radius-md);
+            background-color: var(--primary-accent-light);
             display: flex;
             align-items: center;
             justify-content: center;
+            flex-shrink: 0;
         }
 
-        .card-icon svg {
-            width: 24px;
-            height: 24px;
-            stroke: var(--blue);
+        .card-icon-wrapper svg {
+            width: 20px;
+            height: 20px;
+            stroke: var(--primary-accent);
         }
 
         .card-title {
-            font-size: 1.03rem;
-            font-weight: 650;
-            color: var(--navy);
+            font-size: 1rem;
+            font-weight: 600;
+            color: var(--primary);
         }
 
         .card-desc {
-            margin: 0;
-            color: var(--secondary);
-            font-size: 0.93rem;
-            line-height: 1.65;
+            font-size: 0.88rem;
+            color: var(--text-muted);
+            line-height: 1.6;
         }
 
-        /* Contact */
-        .contact-card {
-            display: grid;
-            grid-template-columns: auto 1fr;
+        /* News Section */
+        .news-list {
+            list-style: none;
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+        }
+
+        .news-item {
+            display: flex;
+            gap: 16px;
+            font-size: 0.92rem;
+        }
+
+        .news-date {
+            font-size: 0.82rem;
+            font-weight: 600;
+            color: var(--primary-accent);
+            background-color: var(--primary-accent-light);
+            padding: 2px 8px;
+            border-radius: 4px;
+            height: fit-content;
+            white-space: nowrap;
+        }
+
+        /* Contact Box */
+        .contact-box {
+            background: var(--bg-card);
+            border: 1px solid var(--border-color);
+            border-radius: var(--radius-lg);
+            padding: 28px;
+            display: flex;
+            align-items: center;
             gap: 20px;
-            padding: 27px 30px;
-            background: linear-gradient(135deg, #f4f8fc, #fbfcfe);
-            border: 1px solid #dae5ee;
-            border-radius: 12px;
+            box-shadow: var(--shadow-sm);
         }
 
-        .contact-big-icon {
-            width: 52px;
-            height: 52px;
-            border-radius: 12px;
-            background: white;
+        .contact-icon {
+            width: 48px;
+            height: 48px;
+            border-radius: 50%;
+            background: var(--primary-accent-light);
             display: flex;
             align-items: center;
             justify-content: center;
-            box-shadow: 0 5px 15px rgba(35, 54, 75, 0.07);
+            flex-shrink: 0;
         }
 
-        .contact-big-icon svg {
-            width: 25px;
-            height: 25px;
-            stroke: var(--blue);
+        .contact-icon svg {
+            width: 24px;
+            height: 24px;
+            stroke: var(--primary-accent);
         }
 
-        .contact-name {
-            margin: 0 0 3px;
-            font-weight: 650;
-            color: var(--navy);
+        .contact-details h3 {
+            font-size: 1.05rem;
+            font-weight: 600;
+            color: var(--primary);
+            margin-bottom: 2px;
         }
 
-        .contact-affiliation {
-            color: var(--secondary);
-            font-size: 0.94rem;
-            margin-bottom: 7px;
+        .contact-details p {
+            font-size: 0.88rem;
+            color: var(--text-muted);
+            margin-bottom: 6px;
         }
 
-        .email-link {
-            display: inline-flex;
-            align-items: center;
-            gap: 7px;
-            color: var(--blue);
+        .contact-email {
+            font-size: 0.9rem;
             font-weight: 500;
+            color: var(--primary-accent);
+        }
+
+        .contact-email:hover {
+            text-decoration: underline;
         }
 
         /* Footer */
         footer {
-            border-top: 1px solid var(--border);
-            padding: 27px 0 34px;
-            color: #97a1ae;
-            font-size: 0.86rem;
+            border-top: 1px solid var(--border-color);
+            padding: 32px 0;
+            color: var(--text-muted);
+            font-size: 0.85rem;
+            background-color: #ffffff;
         }
 
         .footer-inner {
             display: flex;
             justify-content: space-between;
-            gap: 20px;
+            align-items: center;
         }
 
-        /* Mobile */
-        @media (max-width: 700px) {
-            .nav-links {
-                display: none;
-            }
-
-            header {
-                padding: 55px 0 48px;
-            }
-
+        /* Responsive Design */
+        @media (max-width: 768px) {
             .hero {
-                flex-direction: column;
-                align-items: flex-start;
-                gap: 28px;
+                grid-template-columns: 1fr;
+                gap: 24px;
+                text-align: left;
             }
 
             .avatar {
-                width: 105px;
-                height: 105px;
+                width: 110px;
+                height: 110px;
                 font-size: 2.2rem;
             }
 
@@ -434,21 +431,13 @@
                 grid-template-columns: 1fr;
             }
 
-            .contact-card {
-                grid-template-columns: 1fr;
+            .nav-links {
+                display: none; /* Can be replaced with a mobile toggle if needed */
             }
 
-            main {
-                padding-top: 48px;
-            }
-
-            section {
-                margin-bottom: 52px;
-            }
-
-            .footer-inner {
+            .contact-box {
                 flex-direction: column;
-                gap: 4px;
+                align-items: flex-start;
             }
         }
     </style>
@@ -457,12 +446,13 @@
 <body>
 
 <nav>
-    <div class="nav-inner">
-        <div class="nav-name">Bizhi Gao</div>
+    <div class="container nav-inner">
+        <a href="#" class="nav-brand">Bizhi Gao</a>
 
         <div class="nav-links">
             <a href="#about">About</a>
             <a href="#research">Research</a>
+            <a href="#news">News</a>
             <a href="#contact">Contact</a>
         </div>
     </div>
@@ -470,306 +460,192 @@
 
 <header>
     <div class="container hero">
-
-        <div class="avatar">
-            BG
+        <div class="avatar-container">
+            <div class="avatar">BG</div>
         </div>
 
         <div class="hero-content">
-
-            <div class="eyebrow">
-                <svg viewBox="0 0 24 24" fill="none"
-                     stroke="currentColor" stroke-width="2">
-                    <path d="M12 3L2 8l10 5 10-5-10-5z"/>
-                    <path d="M6 10v5c0 2 3 4 6 4s6-2 6-4v-5"/>
-                </svg>
-
-                Academic Homepage
+            <div class="status-badge">
+                <span class="status-dot"></span>
+                Master's Student @ SUEP
             </div>
 
             <h1>Bizhi Gao</h1>
 
-            <div class="role">
-                Master's Student in Computer Technology
-            </div>
+            <div class="role">Master's Student in Computer Technology</div>
 
-            <div class="info-line">
-                <svg viewBox="0 0 24 24" fill="none"
-                     stroke-width="1.8">
-                    <path d="M3 21h18"/>
-                    <path d="M5 21V8l7-4 7 4v13"/>
-                    <path d="M9 21v-5h6v5"/>
+            <div class="university">
+                <svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M22 10v6M2 10l10-5 10 5-10 5z"/>
+                    <path d="M6 12v5c3 3 9 3 12 0v-5"/>
                 </svg>
-
-                <span class="university">
-                    Shanghai University of Electric Power
-                </span>
+                Shanghai University of Electric Power
             </div>
 
             <div class="hero-links">
-
-                <a class="hero-link"
-                   href="mailto:gaobizhi@mail.shiep.edu.cn.com">
-
-                    <svg viewBox="0 0 24 24" fill="none"
-                         stroke-width="1.8">
-                        <rect x="3" y="5" width="18" height="14" rx="2"/>
-                        <path d="M3 7l9 6 9-6"/>
+                <a class="btn-link" href="mailto:gaobizhi@mail.shiep.edu.cn.com">
+                    <svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <rect x="2" y="4" width="20" height="16" rx="2"/>
+                        <path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/>
                     </svg>
-
                     Email
                 </a>
 
-                <a class="hero-link"
-                   href="https://github.com/bizhigao"
-                   target="_blank">
-
-                    <svg viewBox="0 0 24 24" fill="none"
-                         stroke-width="1.8">
-                        <path d="M15 22v-4a4.8 4.8 0 0 0-1-3.5c3.3-.4 6.8-1.6 6.8-7A5.4 5.4 0 0 0 19.4 4
-                        5 5 0 0 0-.1-3.5S17.8.1 15 2a13.4 13.4 0 0 0-7 0C5.2.1
-                        4.1.5 4.1.5A5 5 0 0 0 4 4a5.4 5.4 0 0 0-1.4
-                        3.7c0 5.4 3.5 6.6 6.8 7A4.8 4.8 0 0 0 8.4
-                        18v4"/>
-                        <path d="M8 19c-3 .9-3-1.5-4-2"/>
+                <a class="btn-link" href="https://github.com/bizhigao" target="_blank" rel="noopener">
+                    <svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <path d="M15 22v-4a4.8 4.8 0 0 0-1-3.5c3.3-.4 6.8-1.6 6.8-7A5.4 5.4 0 0 0 19.4 4 5 5 0 0 0 19 2.5s-1.3-.4-4 1.3a13.4 13.4 0 0 0-7 0C5.3 2.1 4 2.5 4 2.5A5 5 0 0 0 3.6 4a5.4 5.4 0 0 0-1.4 3.7c0 5.4 3.5 6.6 6.8 7A4.8 4.8 0 0 0 8.4 18v4"/>
+                        <path d="M9 18c-4.51 2-5-2-7-2"/>
                     </svg>
-
                     GitHub
                 </a>
 
+                <a class="btn-link" href="#" target="_blank">
+                    <svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <path d="M12 2v20M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/>
+                    </svg>
+                    Google Scholar
+                </a>
             </div>
-
         </div>
     </div>
 </header>
 
 <main class="container">
 
+    <!-- About Section -->
     <section id="about">
-
-        <div class="section-heading">
-            <div class="section-icon">
-
-                <svg viewBox="0 0 24 24" fill="none"
-                     stroke-width="1.8">
-                    <circle cx="12" cy="8" r="4"/>
-                    <path d="M4 21c0-4.4 3.6-8 8-8s8 3.6 8 8"/>
-                </svg>
-
-            </div>
-
-            <h2>About Me</h2>
-        </div>
-
+        <h2 class="section-title">
+            <svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M19 21v-2a4 4 0 0 0-4-4H9a4 4 0 0 0-4 4v2"/>
+                <circle cx="12" cy="7" r="4"/>
+            </svg>
+            About Me
+        </h2>
         <p class="about-text">
-            I am a master's student in Computer Technology at
-            <strong>Shanghai University of Electric Power</strong>.
-            My research focuses on large language models,
-            with particular interests in model editing,
-            LLM security, backdoor and jailbreak attacks,
-            and trustworthy artificial intelligence.
+            I am a Master's student in Computer Technology at <strong>Shanghai University of Electric Power</strong>. 
+            My research primarily focuses on <strong>Large Language Models (LLMs)</strong>, with special emphasis on 
+            <strong>model editing</strong>, <strong>LLM security</strong> (including backdoor and jailbreak attacks), and <strong>trustworthy artificial intelligence</strong>.
+            I am passionate about building secure, reliable, and interpretable machine learning systems.
         </p>
-
     </section>
 
+    <!-- News Section (新增学术常见News模块) -->
+    <section id="news">
+        <h2 class="section-title">
+            <svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M4 22h16a2 2 0 0 0 2-2V4a2 2 0 0 0-2-2H8a2 2 0 0 0-2 2v16a2 2 0 0 1-2 2Zm0 0a2 2 0 0 1-2-2v-9c0-1.1.9-2 2-2h2"/>
+                <path d="M18 14h-8"/>
+                <path d="M15 18h-5"/>
+                <path d="M10 6h8v4h-8V6Z"/>
+            </svg>
+            News
+        </h2>
+        <ul class="news-list">
+            <li class="news-item">
+                <span class="news-date">2026.03</span>
+                <span>Submitted a research paper on LLM watermarking and security.</span>
+            </li>
+            <li class="news-item">
+                <span class="news-date">2025.09</span>
+                <span>Started my Master's degree in Computer Technology at SUEP.</span>
+            </li>
+        </ul>
+    </section>
+
+    <!-- Research Interests -->
     <section id="research">
-
-        <div class="section-heading">
-            <div class="section-icon">
-
-                <svg viewBox="0 0 24 24" fill="none"
-                     stroke-width="1.8">
-                    <circle cx="12" cy="12" r="3"/>
-                    <path d="M19.4 15a1.7 1.7 0 0 0 .3 1.9l.1.1-2.8 2.8-.1-.1
-                    a1.7 1.7 0 0 0-1.9-.3 1.7 1.7 0 0 0-1
-                    1.6v.2h-4V21a1.7 1.7 0 0 0-1-1.6
-                    1.7 1.7 0 0 0-1.9.3l-.1.1L4.2 17l.1-.1
-                    a1.7 1.7 0 0 0 .3-1.9A1.7 1.7 0 0 0
-                    3 14H2.8v-4H3a1.7 1.7 0 0 0 1.6-1
-                    1.7 1.7 0 0 0-.3-1.9L4.2 7 7 4.2l.1.1
-                    a1.7 1.7 0 0 0 1.9.3A1.7 1.7 0 0 0
-                    10 3V2.8h4V3a1.7 1.7 0 0 0 1 1.6
-                    1.7 1.7 0 0 0 1.9-.3l.1-.1L19.8 7l-.1.1
-                    a1.7 1.7 0 0 0-.3 1.9 1.7 1.7 0 0 0
-                    1.6 1h.2v4H21a1.7 1.7 0 0 0-1.6 1z"/>
-                </svg>
-
-            </div>
-
-            <h2>Research Interests</h2>
-        </div>
+        <h2 class="section-title">
+            <svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M12 2v20M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/>
+            </svg>
+            Research Interests
+        </h2>
 
         <div class="research-grid">
-
             <div class="research-card">
-
-                <div class="card-top">
-
-                    <div class="card-icon">
-                        <svg viewBox="0 0 24 24" fill="none"
-                             stroke-width="1.8">
-                            <path d="M8 6h8"/>
-                            <path d="M6 10h12"/>
-                            <path d="M8 14h8"/>
-                            <path d="M10 18h4"/>
-                            <rect x="3" y="3" width="18" height="18" rx="4"/>
+                <div class="card-header">
+                    <div class="card-icon-wrapper">
+                        <svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <rect x="2" y="3" width="20" height="14" rx="2" ry="2"/>
+                            <line x1="8" y1="21" x2="16" y2="21"/>
+                            <line x1="12" y1="17" x2="12" y2="21"/>
                         </svg>
                     </div>
-
-                    <div class="card-title">
-                        Large Language Models
-                    </div>
-
+                    <div class="card-title">Large Language Models</div>
                 </div>
-
-                <p class="card-desc">
-                    Security, reliability, and behavioral analysis
-                    of modern large language models.
-                </p>
-
+                <p class="card-desc">Investigating safety, reliability, alignment, and internal behavioral mechanics of modern LLMs.</p>
             </div>
 
             <div class="research-card">
-
-                <div class="card-top">
-
-                    <div class="card-icon">
-                        <svg viewBox="0 0 24 24" fill="none"
-                             stroke-width="1.8">
-                            <path d="M12 20h9"/>
-                            <path d="M16.5 3.5a2.1 2.1 0 0 1 3 3L8 18l-4 1 1-4z"/>
+                <div class="card-header">
+                    <div class="card-icon-wrapper">
+                        <svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M11 4H4a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-7"/>
+                            <path d="M18.5 2.5a2.121 2.121 0 0 1 3 3L12 15l-4 1 1-4 9.5-9.5z"/>
                         </svg>
                     </div>
-
-                    <div class="card-title">
-                        Model Editing
-                    </div>
-
+                    <div class="card-title">Model Editing</div>
                 </div>
-
-                <p class="card-desc">
-                    Efficient modification and analysis of
-                    model knowledge and behavior.
-                </p>
-
+                <p class="card-desc">Efficiently updating and correcting factual knowledge within pre-trained neural networks without full retraining.</p>
             </div>
 
             <div class="research-card">
-
-                <div class="card-top">
-
-                    <div class="card-icon">
-                        <svg viewBox="0 0 24 24" fill="none"
-                             stroke-width="1.8">
+                <div class="card-header">
+                    <div class="card-icon-wrapper">
+                        <svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
                             <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>
-                            <path d="M9 12l2 2 4-4"/>
                         </svg>
                     </div>
-
-                    <div class="card-title">
-                        LLM Security
-                    </div>
-
+                    <div class="card-title">LLM Security</div>
                 </div>
-
-                <p class="card-desc">
-                    Jailbreak attacks, backdoors, and security
-                    risks in open-weight language models.
-                </p>
-
+                <p class="card-desc">Analyzing vulnerabilities, backdoor attacks, jailbreak defenses, and copyright protection in open-source AI models.</p>
             </div>
 
             <div class="research-card">
-
-                <div class="card-top">
-
-                    <div class="card-icon">
-                        <svg viewBox="0 0 24 24" fill="none"
-                             stroke-width="1.8">
-                            <circle cx="12" cy="12" r="9"/>
-                            <path d="M8 12l2.5 2.5L16 9"/>
+                <div class="card-header">
+                    <div class="card-icon-wrapper">
+                        <svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/>
+                            <polyline points="22 4 12 14.01 9 11.01"/>
                         </svg>
                     </div>
-
-                    <div class="card-title">
-                        Trustworthy AI
-                    </div>
-
+                    <div class="card-title">Trustworthy AI</div>
                 </div>
-
-                <p class="card-desc">
-                    Robustness, watermarking, attribution,
-                    and trustworthy deployment of AI systems.
-                </p>
-
+                <p class="card-desc">Developing watermarking, content attribution, and robust mechanisms for ethical and verifiable AI deployment.</p>
             </div>
-
         </div>
-
     </section>
 
+    <!-- Contact Section -->
     <section id="contact">
+        <h2 class="section-title">
+            <svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/>
+                <polyline points="22,6 12,13 2,6"/>
+            </svg>
+            Contact
+        </h2>
 
-        <div class="section-heading">
-
-            <div class="section-icon">
-                <svg viewBox="0 0 24 24" fill="none"
-                     stroke-width="1.8">
-                    <rect x="3" y="5" width="18" height="14" rx="2"/>
-                    <path d="M3 7l9 6 9-6"/>
+        <div class="contact-box">
+            <div class="contact-icon">
+                <svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/>
                 </svg>
             </div>
-
-            <h2>Contact</h2>
-
-        </div>
-
-        <div class="contact-card">
-
-            <div class="contact-big-icon">
-
-                <svg viewBox="0 0 24 24" fill="none"
-                     stroke-width="1.8">
-                    <rect x="3" y="5" width="18" height="14" rx="2"/>
-                    <path d="M3 7l9 6 9-6"/>
-                </svg>
-
+            <div class="contact-details">
+                <h3>Bizhi Gao (高必枝)</h3>
+                <p>School of Computer Science & Technology, Shanghai University of Electric Power</p>
+                <a class="contact-email" href="mailto:gaobizhi@mail.shiep.edu.cn.com">gaobizhi@mail.shiep.edu.cn.com</a>
             </div>
-
-            <div>
-
-                <p class="contact-name">
-                    Bizhi Gao
-                </p>
-
-                <div class="contact-affiliation">
-                    Master's Student · Shanghai University of Electric Power
-                </div>
-
-                <a class="email-link"
-                   href="mailto:gaobizhi@mail.shiep.edu.cn.com">
-                    gaobizhi@mail.shiep.edu.cn.com
-                </a>
-
-            </div>
-
         </div>
-
     </section>
 
 </main>
 
 <footer>
     <div class="container footer-inner">
-
-        <span>
-            © 2026 Bizhi Gao
-        </span>
-
-        <span>
-            Academic Homepage
-        </span>
-
+        <span>&copy; 2026 Bizhi Gao. All rights reserved.</span>
+        <span>Designed for Academic Profile</span>
     </div>
 </footer>
 
