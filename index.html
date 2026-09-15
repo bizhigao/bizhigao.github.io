@@ -3,73 +3,316 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
     <title>Bizhi Gao</title>
+    <meta name="description" content="Academic homepage of Bizhi Gao, Shanghai University of Electric Power.">
+
     <style>
+        :root {
+            --text: #253044;
+            --secondary: #667085;
+            --accent: #2f5f8f;
+            --accent-light: #eef4f9;
+            --border: #e4e7ec;
+            --background: #ffffff;
+            --soft-bg: #f8fafc;
+        }
+
+        * {
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
         body {
-            font-family: Arial, Helvetica, sans-serif;
-            max-width: 800px;
-            margin: 60px auto;
-            padding: 0 20px;
-            line-height: 1.7;
-            color: #222;
+            margin: 0;
+            background: var(--background);
+            color: var(--text);
+            font-family:
+                -apple-system,
+                BlinkMacSystemFont,
+                "Segoe UI",
+                Roboto,
+                Helvetica,
+                Arial,
+                sans-serif;
+            font-size: 16px;
+            line-height: 1.75;
         }
 
-        h1 {
-            margin-bottom: 5px;
+        .container {
+            width: min(900px, calc(100% - 40px));
+            margin: 0 auto;
         }
 
-        .affiliation {
-            color: #555;
-            margin-bottom: 25px;
+        /* Header */
+        header {
+            padding: 90px 0 55px;
+            border-bottom: 1px solid var(--border);
         }
 
-        h2 {
-            margin-top: 35px;
-            border-bottom: 1px solid #ddd;
-            padding-bottom: 5px;
+        .name {
+            margin: 0;
+            font-family: Georgia, "Times New Roman", serif;
+            font-size: clamp(2.8rem, 7vw, 4.4rem);
+            font-weight: 500;
+            letter-spacing: -0.03em;
+            line-height: 1.1;
+            color: #1f2937;
+        }
+
+        .position {
+            margin-top: 18px;
+            font-size: 1.15rem;
+            color: var(--secondary);
+        }
+
+        .university {
+            color: var(--accent);
+            font-weight: 500;
+        }
+
+        .contact-top {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 12px 22px;
+            margin-top: 24px;
+            font-size: 0.96rem;
         }
 
         a {
-            color: #0366d6;
+            color: var(--accent);
             text-decoration: none;
+            transition: opacity 0.2s ease;
+        }
+
+        a:hover {
+            opacity: 0.72;
+        }
+
+        /* Main content */
+        main {
+            padding: 52px 0 80px;
+        }
+
+        section {
+            margin-bottom: 52px;
+        }
+
+        h2 {
+            margin: 0 0 20px;
+            font-family: Georgia, "Times New Roman", serif;
+            font-size: 1.65rem;
+            font-weight: 500;
+            color: #26364a;
+        }
+
+        h2::after {
+            content: "";
+            display: block;
+            width: 42px;
+            height: 2px;
+            margin-top: 9px;
+            background: var(--accent);
+        }
+
+        p {
+            margin: 0;
+            max-width: 780px;
+        }
+
+        /* Research interests */
+        .research-grid {
+            display: grid;
+            grid-template-columns: repeat(2, minmax(0, 1fr));
+            gap: 14px;
+        }
+
+        .research-item {
+            padding: 18px 20px;
+            background: var(--soft-bg);
+            border: 1px solid var(--border);
+            border-radius: 8px;
+            transition:
+                transform 0.2s ease,
+                border-color 0.2s ease;
+        }
+
+        .research-item:hover {
+            transform: translateY(-2px);
+            border-color: #c9d7e5;
+        }
+
+        .research-title {
+            font-weight: 600;
+            color: #344054;
+        }
+
+        .research-desc {
+            margin-top: 4px;
+            font-size: 0.92rem;
+            line-height: 1.55;
+            color: var(--secondary);
+        }
+
+        /* Contact */
+        .contact-box {
+            padding: 22px 24px;
+            background: var(--accent-light);
+            border-left: 3px solid var(--accent);
+            border-radius: 4px;
+        }
+
+        .contact-box p + p {
+            margin-top: 5px;
+        }
+
+        /* Footer */
+        footer {
+            padding: 25px 0 35px;
+            border-top: 1px solid var(--border);
+            color: #98a2b3;
+            font-size: 0.88rem;
+        }
+
+        @media (max-width: 640px) {
+            header {
+                padding: 60px 0 40px;
+            }
+
+            main {
+                padding-top: 40px;
+            }
+
+            .research-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .container {
+                width: min(100% - 32px, 900px);
+            }
         }
     </style>
 </head>
 
 <body>
 
-<h1>Bizhi Gao</h1>
+<header>
+    <div class="container">
 
-<div class="affiliation">
-    Master's Student<br>
-   Shanghai University of Electric Power
-</div>
+        <h1 class="name">Bizhi Gao</h1>
 
-<h2>About Me</h2>
+        <div class="position">
+            Master's Student in Computer Technology<br>
+            <span class="university">
+                Shanghai University of Electric Power
+            </span>
+        </div>
 
-<p>
-I am a master's student at Shanghai University of Electric Power.
-My research interests include large language models, model editing,
-LLM security, and trustworthy artificial intelligence.
-</p>
+        <div class="contact-top">
+            <a href="mailto:gaobizhi@mail.shiep.edu.cn.com">
+                ✉ gaobizhi@mail.shiep.edu.cn.com
+            </a>
+        </div>
 
-<h2>Research Interests</h2>
+    </div>
+</header>
 
-<ul>
-    <li>Large Language Models</li>
-    <li>Model Editing</li>
-    <li>LLM Security</li>
-    <li>Trustworthy Artificial Intelligence</li>
-</ul>
+<main class="container">
 
-<h2>Contact</h2>
+    <section>
+        <h2>About Me</h2>
 
-<p>
-Email:
-<a href="mailto:gaobizhi@mail.edu.cn.com">
-gaobizhi@mail.edu.cn.com
-</a>
-</p>
+        <p>
+            I am a master's student in Computer Technology at
+            Shanghai University of Electric Power.
+            My research focuses on large language models,
+            with particular interests in model editing,
+            LLM security, backdoor and jailbreak attacks,
+            and trustworthy artificial intelligence.
+        </p>
+    </section>
+
+
+    <section>
+        <h2>Research Interests</h2>
+
+        <div class="research-grid">
+
+            <div class="research-item">
+                <div class="research-title">
+                    Large Language Models
+                </div>
+                <div class="research-desc">
+                    Security and reliability of modern large language models.
+                </div>
+            </div>
+
+            <div class="research-item">
+                <div class="research-title">
+                    Model Editing
+                </div>
+                <div class="research-desc">
+                    Efficient modification and analysis of model knowledge
+                    and behavior.
+                </div>
+            </div>
+
+            <div class="research-item">
+                <div class="research-title">
+                    LLM Security
+                </div>
+                <div class="research-desc">
+                    Jailbreak attacks, backdoors, and security risks
+                    in open-weight language models.
+                </div>
+            </div>
+
+            <div class="research-item">
+                <div class="research-title">
+                    Trustworthy AI
+                </div>
+                <div class="research-desc">
+                    Robustness, attribution, watermarking, and
+                    trustworthy deployment of AI systems.
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+
+    <section>
+        <h2>Contact</h2>
+
+        <div class="contact-box">
+            <p>
+                <strong>Bizhi Gao</strong>
+            </p>
+
+            <p>
+                Shanghai University of Electric Power
+            </p>
+
+            <p>
+                Email:
+                <a href="mailto:gaobizhi@mail.shiep.edu.cn.com">
+                    gaobizhi@mail.shiep.edu.cn.com
+                </a>
+            </p>
+        </div>
+    </section>
+
+</main>
+
+
+<footer>
+    <div class="container">
+        © 2026 Bizhi Gao · Academic Homepage
+    </div>
+</footer>
 
 </body>
 </html>
